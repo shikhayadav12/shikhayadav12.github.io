@@ -1,5 +1,618 @@
+
 <!DOCTYPE html>
-<html>
-  <title>Hello Guys</title>
-  <body>Welcome to my world</body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shikha Yadav | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0b1020;
+    --card: #151f35;
+    --text: #edf2ff;
+    --muted: #a5b1c9;
+    --accent: #8b9cff;
+    --green: #5eead4;
+    --border: rgba(174,190,220,.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,16,32,.95);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Space Grotesk';
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 0;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hello {
+    color: var(--green);
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk';
+    font-size: clamp(45px, 7vw, 75px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 22px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: #0b1020;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* PROFILE IMAGE */
+
+.profile {
+    width: 280px;
+    height: 280px;
+    border-radius: 25px;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 35px rgba(139,156,255,.2);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 85px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: 'Space Grotesk';
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: var(--green);
+}
+
+.about-text {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+/* EDUCATION AND RESEARCH */
+
+.timeline {
+    display: grid;
+    gap: 20px;
+}
+
+.timeline-item {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.timeline-item h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+.date {
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* SKILLS */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: .3s;
+}
+
+.skill:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent);
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+    color: var(--green);
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.repo-language {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* CONTACT */
+
+.contact-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin: 15px 0 25px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media(max-width: 550px) {
+    .nav-links {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<div class="container">
+<nav>
+    <a href="#home" class="logo">Shikha<span>.</span></a>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+</div>
+</header>
+
+<!-- HOME -->
+
+<div class="container hero" id="home">
+
+<div class="hero-content">
+
+    <div class="hello">Hello, I'm</div>
+
+    <h1>Shikha <span>Yadav</span></h1>
+
+    <p>
+        M.Tech Computer Science Student at IIT Kanpur.
+        Interested in GPU Architecture, High Performance
+        Computing, Operating Systems and Artificial Intelligence.
+    </p>
+
+    <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+
+        <a href="https://github.com/shikha0110yadav"
+           target="_blank" class="btn">GitHub ↗</a>
+
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+</div>
+
+<img class="profile"
+src="https://github.com/shikha0110yadav.png"
+alt="Shikha Yadav">
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container">
+
+<h2 class="section-title">About <span>Me</span></h2>
+
+<div class="about-text">
+I am currently pursuing M.Tech in Computer Science and
+Engineering at Indian Institute of Technology, Kanpur.
+
+My interests include Computer Architecture, GPU Computing,
+Parallel Programming, Operating Systems, Machine Learning
+and High Performance Computing.
+
+I enjoy solving challenging problems, understanding
+computer systems and building efficient software.
+</div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+<div class="container">
+
+<h2 class="section-title">My <span>Education</span></h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="date">2024 – Present</div>
+<h3>M.Tech in Computer Science and Engineering</h3>
+<p>Indian Institute of Technology, Kanpur</p>
+<p>CGPA: 9.2</p>
+</div>
+
+<div class="timeline-item">
+<div class="date">2019 – 2023</div>
+<h3>B.Tech in Computer Science</h3>
+<p>Add your undergraduate college name and CGPA here.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RESEARCH -->
+
+<section id="research">
+<div class="container">
+
+<h2 class="section-title">Research & <span>Experience</span></h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="date">January 2025 – Present</div>
+
+<h3>GPU Architecture Research | M.Tech Thesis</h3>
+
+<p>
+Working on improving Accel-Sim GPU simulator.
+Integrated OpenMP parallelism, achieving 4–6x speedup.
+Extended simulator memory capacity from 2GB to 8GB+.
+Currently exploring Unified Virtual Memory support
+through cudaMallocManaged API simulation.
+</p>
+
+<p>Advisor: Prof. Swarnendu Biswas, IIT Kanpur</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+<div class="container">
+
+<h2 class="section-title">My <span>Projects</span></h2>
+
+<div class="project-grid" id="projectGrid">
+
+<div class="project-card">
+<h3>High Performance Computing</h3>
+<p>
+Optimized matrix multiplication using Intel AVX2 and SSE4,
+parallel grid search using OpenMP, GPU convolution using CUDA
+and concurrent data structures.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+<div class="project-card">
+<h3>Building an Operating System</h3>
+<p>
+Implemented a custom Linux shell using fork, exec and wait.
+Built a custom memory allocator using mmap and munmap,
+along with a custom filesystem.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+<div class="project-card">
+<h3>RISC-V CPU Emulator</h3>
+<p>
+A self project focused on RISC-V processor emulation
+and understanding instruction execution.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+<div class="project-card">
+<h3>IndicKisan</h3>
+<p>
+Multilingual agricultural AI assistant using a custom
+Transformer, RAG pipeline and crop disease classification.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+<div class="project-card">
+<h3>Geographic Prior Injection for UAV Navigation</h3>
+<p>
+Integrated geographic landmark coordinates as spatial
+priors for vision-language navigation.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+<div class="project-card">
+<h3>PipeAES-128</h3>
+<p>
+Designed and verified a pipelined AES-128 encryption
+module using Verilog and Vivado.
+</p>
+<a href="https://github.com/shikha0110yadav"
+target="_blank">View GitHub →</a>
+</div>
+
+</div>
+
+<p style="margin-top:25px">
+<a href="https://github.com/shikha0110yadav?tab=repositories"
+target="_blank" class="btn btn-primary">
+View All GitHub Repositories →
+</a>
+</p>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<div class="container">
+
+<h2 class="section-title">Technical <span>Skills</span></h2>
+
+<div class="skills">
+<span class="skill">C</span>
+<span class="skill">C++</span>
+<span class="skill">SQL</span>
+<span class="skill">CUDA</span>
+<span class="skill">OpenMP</span>
+<span class="skill">MPI</span>
+<span class="skill">Pthreads</span>
+<span class="skill">AVX2</span>
+<span class="skill">SSE4</span>
+<span class="skill">PyTorch</span>
+<span class="skill">Machine Learning</span>
+<span class="skill">Verilog</span>
+<span class="skill">Vivado</span>
+<span class="skill">Linux</span>
+<span class="skill">FastAPI</span>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+
+<div class="contact-box">
+
+<h2 class="section-title">Let's <span>Connect</span></h2>
+
+<p>
+Interested in research, software engineering,
+systems and exciting technical opportunities.
+Feel free to connect with me.
+</p>
+
+<a href="https://github.com/shikha0110yadav"
+target="_blank" class="btn btn-primary">
+GitHub Profile →
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Shikha Yadav | Built with HTML & CSS</p>
+</footer>
+
+</body>
 </html>
